@@ -1,0 +1,21 @@
+/**index.wxss**/
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item{
+  height: 300rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  padding:0 16rpx;
+  color:#333333;
+   
+}
+.scroll-view-item_H  {
+  padding:0 10rpx;
+  height: 160rpx;
+  line-height:160rpx; 
+}
+.scroll-view-item_H.current .txt{
+    border-bottom:8rpx solid #92764a; 
+}

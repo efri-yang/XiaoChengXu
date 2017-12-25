@@ -1,0 +1,24 @@
+<!--index.wxml-->
+<view>
+  <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+        <view  class="scroll-view-item_H current"><b class="txt">闽菜</b></view>
+        <view  class="scroll-view-item_H">火锅</view>
+        <view  class="scroll-view-item_H">西餐</view>
+        <view  class="scroll-view-item_H">小吃</view>
+        <view  class="scroll-view-item_H">自助餐</view>
+        <view  class="scroll-view-item_H">闽菜</view>
+        <view  class="scroll-view-item_H">韩国料理</view>
+        <view  class="scroll-view-item_H">川菜</view>
+        <view  class="scroll-view-item_H">东南亚菜</view>
+        <view  class="scroll-view-item_H">家常菜</view>
+        <view  class="scroll-view-item_H">私房菜</view>
+        <view  class="scroll-view-item_H">粤菜</view>
+        <view  class="scroll-view-item_H">海鲜</view>
+        <view  class="scroll-view-item_H">东北菜</view>
+        <view  class="scroll-view-item_H">私房菜</view> 
+  </scroll-view>
+</view>
+
+
+
+
