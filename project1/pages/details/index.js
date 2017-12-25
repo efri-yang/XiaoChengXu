@@ -6,6 +6,10 @@ Page({
     iconDialogClose:"../../images/details/icon_dialog_close.png",
     isIntroDialogShow:false
   },
+
+  
+
+
   
   shopIntroDialog:function () {
        this.setData({

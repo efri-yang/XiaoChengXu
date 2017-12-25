@@ -1,41 +1,19 @@
 <!--index.wxml-->
+
+
 <view class="container" style='position:relative'>
   <scroll-view class="gs-main-nav clear" scroll-x="true" bindscroll="scroll" style="width: 100%">
-        <view  class="item current"><text class="txt">闽菜</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
+        <view wx:for="{{nav}}" wx:for-index="index" wx:for-item="item" id="{{item.id}}"   bindtap='navTap' class="item {{!!item.selected ? 'current' :'xx'}}" >
+            <text class="txt">{{item.name}}</text>
+        </view>
   </scroll-view>
   <view class="h-nav-all" wx:if="{{navAllShow}}">
         <view class='hd'>
             <text class='tit'>全部分类</text>
         </view>
-        <view  class="item current"><text class="txt">闽菜</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>  
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>  
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>  
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>  
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>  
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>  
-        <view  class="item"><text class="txt">火锅</text></view>
-        <view  class="item"><text class="txt">火锅</text></view>  
+        <view class='item' wx:for="{{nav}}" wx:for-index="index" wx:for-item="item" id="{{index}}" bindtap='navTap'>
+            <text class="txt">{{item.name}}</text>
+        </view>  
   </view>
   <view class="h-more-btn {{!!navAllShow ? 'current' :''}}" bindtap="navMore"><image class="arrow" src="{{arrow}}" background-size="cover"></image></view>
 </view>
