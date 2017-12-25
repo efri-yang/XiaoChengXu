@@ -1,0 +1,34 @@
+<view class="container gs-details">
+  <view class="gs-details-header">
+    <view class="soma-rank">
+        <view class="detail">
+            <view class="rank">No.1</view>
+            <text class="name">厦门闽菜Top50</text>
+        </view> 
+    </view>
+    <view class="soma-shopname">35号私厨</view>
+    <view class="soma-ft">
+        <view class='item'>
+            <label class="digit">9.0</label>
+            <label class='txt'>口味</label>
+        </view>
+        <view class='item'>
+            <label class="digit">8.8</label>
+            <label class='txt'>服务</label>
+        </view>
+        <view class='item'>
+            <label class="digit">9.0</label>
+            <label class='txt'>环境</label>
+        </view>
+        <view class='item'>
+            <label class="digit">87.3%</label>
+            <label class='txt'>五星好评率</label>
+        </view>
+        <view class='item'>
+            <label class="digit">1.2%</label>
+            <label class='txt'>差评率</label>
+        </view>
+    </view>
+  </view>
+  <view class="details-tip-1">*部分数据来自第三方</view>
+</view>

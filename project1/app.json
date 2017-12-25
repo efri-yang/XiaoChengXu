@@ -1,7 +1,9 @@
 {
   "pages":[
+    "pages/details/index",
     "pages/index/index",
     "pages/logs/logs"
+    
   ],
   "window":{
     "backgroundTextStyle":"light",
@@ -9,4 +11,5 @@
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
   }
+  
 }

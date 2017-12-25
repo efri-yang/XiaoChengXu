@@ -1,0 +1,71 @@
+page{
+  background:#efeff4; 
+}
+.gs-details-header {
+  background:#fff; 
+}
+
+.gs-details-header .soma-rank {
+  height: 105rpx;
+  background: #efeff4;
+  border-top: 1rpx solid #cecece;
+  padding: 0 40rpx;
+}
+
+.gs-details-header .soma-rank .detail {
+  height: 44rpx;
+  line-height: 44rpx;
+  border: 2rpx solid #d59c44;
+  float: left;
+  background: #e4c79c;
+  border-radius: 6rpx;
+  margin-top: 30rpx;
+}
+
+.gs-details-header .soma-rank .detail .rank {
+  float: left;
+  background: #f8dfb7;
+  font-size: 26rpx;
+  padding: 0 30rpx 0 12rpx;
+}
+
+.gs-details-header .soma-rank .detail .name {
+  color: #61451a;
+  font-size: 26rpx;
+  padding: 0 30rpx;
+}
+
+.gs-details-header .soma-shopname{
+  height:116rpx;
+  line-height:116rpx;
+  margin: 0 60rpx;
+  border-bottom:1rpx solid #dddddd;
+  color:#111111;
+  font-size: 42rpx;    
+}
+
+.gs-details-header .soma-ft{
+  display:flex; 
+}
+.gs-details-header .soma-ft .item{
+  flex: 1;
+  text-align: center; 
+  padding: 30rpx 0; 
+}
+.gs-details-header .soma-ft .item .digit{
+    display: block;
+    font-size:28rpx;
+    color:#92764a;
+    line-height:1; 
+    
+}
+.gs-details-header .soma-ft .item .txt{
+  color:#777777;
+  font-size:20rpx; 
+}
+
+.details-tip-1{
+  margin: 20rpx 60rpx 0;
+  color:#999999;
+  font-size:20rpx;  
+}
