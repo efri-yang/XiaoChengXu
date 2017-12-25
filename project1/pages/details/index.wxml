@@ -1,34 +1,59 @@
 <view class="container gs-details">
   <view class="gs-details-header">
     <view class="soma-rank">
-        <view class="detail">
-            <view class="rank">No.1</view>
-            <text class="name">厦门闽菜Top50</text>
-        </view> 
+      <view class="detail">
+        <view class="rank">No.1</view>
+        <text class="name">厦门闽菜Top50</text>
+      </view>
     </view>
     <view class="soma-shopname">35号私厨</view>
     <view class="soma-ft">
-        <view class='item'>
-            <label class="digit">9.0</label>
-            <label class='txt'>口味</label>
-        </view>
-        <view class='item'>
-            <label class="digit">8.8</label>
-            <label class='txt'>服务</label>
-        </view>
-        <view class='item'>
-            <label class="digit">9.0</label>
-            <label class='txt'>环境</label>
-        </view>
-        <view class='item'>
-            <label class="digit">87.3%</label>
-            <label class='txt'>五星好评率</label>
-        </view>
-        <view class='item'>
-            <label class="digit">1.2%</label>
-            <label class='txt'>差评率</label>
-        </view>
+      <view class='item'>
+        <label class="digit">9.0</label>
+        <label class='txt'>口味</label>
+      </view>
+      <view class='item'>
+        <label class="digit">8.8</label>
+        <label class='txt'>服务</label>
+      </view>
+      <view class='item'>
+        <label class="digit">9.0</label>
+        <label class='txt'>环境</label>
+      </view>
+      <view class='item'>
+        <label class="digit">87.3%</label>
+        <label class='txt'>五星好评率</label>
+      </view>
+      <view class='item'>
+        <label class="digit">1.2%</label>
+        <label class='txt'>差评率</label>
+      </view>
+    </view>
+    <view class="soma-zs">
+        <view class='digit'>829</view>
+        <text class='txt'>好店指数</text>
     </view>
   </view>
   <view class="details-tip-1">*部分数据来自第三方</view>
 </view>
+
+<view class='details-tip-2' bindtap='shopIntroDialog'>
+  <image src="{{iconGsWhat}}" class='img'></image>什么是好店?</view>
+
+<view class="shop-intro-dialog-wrap {{!!isIntroDialogShow ? 'show':''}}">
+  <view class="shop-intro-dialog">
+    <view class="soma-hd">
+      <text>什么是好店？</text>
+    </view>
+    <view class="soma-bd">
+      <view>好店是一款基于数据挖掘技术的城市生活 消费平台和独立第三方消费测评平台。当 前海量的信息和数据一方面丰富了用户的 选择另一方面也常常让用户无所适从，好 店就是为了解决这问题而诞生。
+      </view>
+      <view style='margin-top:36rpx;'>我们通过整合散落在各处有价值的数据， 为你呈现有趣的资讯集合、有态度的好店 榜单、定制化的信息追踪、智能过滤信息 噪音。
+      </view>
+    </view>
+  </view>
+  <view class='soma-close' bindtap='shopIntroDialog'>
+    <image src="{{iconDialogClose}}"></image>
+  </view>
+</view>
+<view class="shop-intro-dialog-mask {{!!isIntroDialogShow ? 'show':''}}" bindtap='shopIntroDialog'></view>
