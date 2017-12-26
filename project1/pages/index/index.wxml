@@ -18,6 +18,8 @@
   <view class="h-more-btn {{!!navAllShow ? 'current' :''}}" bindtap="navMore"><image class="arrow" src="{{arrow}}" background-size="cover"></image></view>
 </view>
 
+
+
 <view class='gs-tbl-thead-holder'>
   <view class="gs-tbl-thead {{!!tblHeadFixed ? 'fixed' :''}}">
     <view class="item">排名</view>
@@ -26,9 +28,13 @@
   </view>
 </view>
 
-
-
-<view class="gs-tbl-tbody">
+<view class='gs-tbl-nodata' wx:if="{{!dataRank.data.shops.length}}">
+    暂无数据！
+</view>
+<view class='coms-load-more'>
+    <view class='pic'></view>
+</view>
+<view class="gs-tbl-tbody"  wx:if="{{dataRank.data.shops.length}}">
      <navigator wx:for="{{dataRank.data.shops}}" wx:for-index="index" wx:for-item="item"  url="/pages/details/index?id={{item.id}}" hover-class="navigator-hover">
           <view class="item-box">
                   <view class="item item-1">{{item.rank}}</view>

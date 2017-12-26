@@ -153,3 +153,35 @@
     font-weight:600;  
 }
 
+
+.gs-tbl-nodata{
+  padding: 150rpx 0;
+  text-align: center;
+  color:#aaaaaa; 
+}
+.coms-load-more {
+    padding: 100rpx 0 30rpx;   
+}
+
+.coms-load-more .pic {
+        width: 54rpx;
+        height: 32rpx;
+        display: block;
+        margin: 0 auto;
+        overflow: hidden;
+        background: url("http://wnworld.com/images/coms_load_more.png") no-repeat 0 0;
+        animation: animateLoadingIcon steps(4, end) 2s infinite;
+        background-size: auto 100%;
+    }
+
+@keyframes animateLoadingIcon {
+    0% {
+        background-position: 0 0;
+    }
+    100% {
+
+        background-position: -216rpx 0;
+    }
+}
+
+

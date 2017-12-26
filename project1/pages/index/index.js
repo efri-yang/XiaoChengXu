@@ -70,7 +70,7 @@ Page({
       navAllShow: false
     })
     //请求获取数据
-
+    this.ajaxGetRankList(id);
 
   },
 
