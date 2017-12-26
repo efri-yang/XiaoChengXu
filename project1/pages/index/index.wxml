@@ -3,16 +3,16 @@
 
 <view class="container" style='position:relative'>
   <scroll-view class="gs-main-nav clear" scroll-x="true" bindscroll="scroll" style="width: 100%">
-        <view wx:for="{{nav}}" wx:for-index="index" wx:for-item="item" id="{{item.id}}"   bindtap='navTap' class="item {{!!item.selected ? 'current' :'xx'}}" >
-            <text class="txt">{{item.name}}</text>
+        <view wx:for="{{nav.data.list}}" wx:for-index="index" wx:for-item="item" id="{{item}}"   bindtap='navTap' class="item {{index==currentIndex ? 'current' : ''}}" >
+            <text class="txt">{{item}}</text>
         </view>
   </scroll-view>
   <view class="h-nav-all" wx:if="{{navAllShow}}">
         <view class='hd'>
             <text class='tit'>全部分类</text>
         </view>
-        <view class='item' wx:for="{{nav}}" wx:for-index="index" wx:for-item="item" id="{{index}}" bindtap='navTap'>
-            <text class="txt">{{item.name}}</text>
+        <view wx:for="{{nav.data.list}}" wx:for-index="index" wx:for-item="item" id="{{item}}"   bindtap='navTap'  class="item {{index==currentIndex ? 'current' : ''}}" >
+            <text class="txt">{{item}}</text>
         </view>  
   </view>
   <view class="h-more-btn {{!!navAllShow ? 'current' :''}}" bindtap="navMore"><image class="arrow" src="{{arrow}}" background-size="cover"></image></view>
@@ -27,94 +27,16 @@
 </view>
 
 
+
 <view class="gs-tbl-tbody">
-     <navigator url="/pages/details/index" hover-class="navigator-hover">
+     <navigator wx:for="{{dataRank.data.shops}}" wx:for-index="index" wx:for-item="item"  url="/pages/details/index?id={{item.id}}" hover-class="navigator-hover">
           <view class="item-box">
-                  <view class="item item-1">1</view>
-                  <view class="item item-2">35号私厨</view>
-                  <view class="item item-3">829</view>     
+                  <view class="item item-1">{{item.rank}}</view>
+                  <view class="item item-2">{{item.name}}</view>
+                  <view class="item item-3">{{item.hdi2}}</view>     
           </view>
      </navigator>
-    <view class="item-box">
-        <view class="item item-1">2</view>
-        <view class="item item-2">35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">3</view>
-        <view class="item item-2">35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">4</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
-    <view class="item-box">
-        <view class="item item-1">5</view>
-        <view class="item item-2">35号私厨35号私厨35号私厨35号私厨35号私厨35号私厨</view>
-        <view class="item item-3">829</view>
-    </view>
+    
 
     <!-- <loading hidden="{{loadingHidden}}">
         加载中...

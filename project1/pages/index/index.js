@@ -5,65 +5,91 @@ const app = getApp();
 Page({
   data: {
     arrow: '../../images/h_arrow_1.png',
-    tblHeadFixed:false,
-    navAllShow:false,
-    isLoading:true,
-    nav:[]
+    tblHeadFixed: false,
+    navAllShow: false,
+    isLoading: true,
+    nav: "",
+    dataRank: "",
+    currentIndex: 0
   },
   onLoad: function (options) {
-    var that=this;
+    var that = this;
     wx.request({
-      // url: 'http://127.0.0.1/nav.php',
-      url:"http://127.0.0.1/nav.php",
+      url: "https://m3.xiaoyu.com/welcome/wechatapp?callback=haodian.cates",
       data: {},
-      method: 'GET',  
+      method: 'GET',
       header: {
         'content-type': 'application/json' // 默认值
       },
       success: function (res) {
-        res.data.data.list[0].selected=true;
         that.setData({
-          nav: res.data.data.list
-        })
+          nav: res.data
+        });
+        console.log(that.data.nav);
+        that.ajaxGetRankList(that.data.nav.data.list[0]);
       },
-      fail:function(res){
+      fail: function (res) {
         console.log(res);
       }
     })
   },
 
-  onPageScroll: function (res){
-    if (res.scrollTop > 80){
-        this.setData({
-            tblHeadFixed:true
-        })
-    }else{
-      this.setData({
-        tblHeadFixed:false
-      })
-    }
+ ajaxGetRankList: function (id) {
+    var that=this;
+    wx.request({
+      url: "https://m3.xiaoyu.com/welcome/wechatapp?callback=haodian.top50&cate=" + id,
+      method: 'GET',
+      header: {
+        'content-type': 'application/json' // 默认值
+      },
+      success: function (res) {
+        that.setData({
+          dataRank: res.data
+        });
+
+      },
+      fail: function (res) {
+        console.log(res);
+      }
+    })
   },
-  navMore:function(){
-      this.setData({
-        navAllShow: !this.data.navAllShow
-      })
-  },
-  navTap:function(e){
-    var id=e.currentTarget.id;
-    this.data.nav.forEach(function(v,k){
-      if(v.id==id){
-        v["selected"]=true;
-      }else{
-        v["selected"] =false;
+
+  navTap: function (e) {
+    var that = this;
+    var id = e.currentTarget.id;
+    //设置currentIndex
+    this.data.nav.data.list.forEach(function (v, k) {
+      if (id == v) {
+        that.setData({
+          currentIndex: k
+        });
+        return;
       }
     });
     this.setData({
-      nav: this.data.nav
-    });
+      navAllShow: false
+    })
+    //请求获取数据
 
-    
-   
-    
+
+  },
+
+  onPageScroll: function (res) {
+    if (res.scrollTop > 80) {
+      this.setData({
+        tblHeadFixed: true
+      })
+    } else {
+      this.setData({
+        tblHeadFixed: false
+      })
+    }
+  },
+  navMore: function () {
+    this.setData({
+      navAllShow: !this.data.navAllShow
+    })
   }
-  
+
+
 })
