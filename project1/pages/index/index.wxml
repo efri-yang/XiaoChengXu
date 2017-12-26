@@ -15,7 +15,7 @@
             <text class="txt">{{item}}</text>
         </view>  
   </view>
-  <view class="h-more-btn {{!!navAllShow ? 'current' :''}}" bindtap="navMore"><image class="arrow" src="{{arrow}}" background-size="cover"></image></view>
+  <view class="h-more-btn {{!!navAllShow ? 'current' :''}}" bindtap="navMore"><view class="arrow"></view></view>
 </view>
 
 
@@ -28,13 +28,13 @@
   </view>
 </view>
 
-<view class='gs-tbl-nodata' wx:if="{{!dataRank.data.shops.length}}">
+<view class='gs-tbl-nodata' wx:if="{{!dataRank.data.shops.length && !isLoadingShow}}">
     暂无数据！
 </view>
-<view class='coms-load-more'>
+<view class='coms-load-more'  wx:if="{{isLoadingShow}}">
     <view class='pic'></view>
 </view>
-<view class="gs-tbl-tbody"  wx:if="{{dataRank.data.shops.length}}">
+<view class="gs-tbl-tbody"  wx:if="{{dataRank.data.shops.length && !isLoadingShow}}">
      <navigator wx:for="{{dataRank.data.shops}}" wx:for-index="index" wx:for-item="item"  url="/pages/details/index?id={{item.id}}" hover-class="navigator-hover">
           <view class="item-box">
                   <view class="item item-1">{{item.rank}}</view>

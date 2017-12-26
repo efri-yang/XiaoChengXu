@@ -37,8 +37,7 @@ page{
 }
 
 .gs-details-header .soma-shopname{
-  height:116rpx;
-  line-height:116rpx;
+  padding: 30rpx 100rpx 30rpx 0;
   margin: 0 60rpx;
   border-bottom:1rpx solid #dddddd;
   color:#111111;

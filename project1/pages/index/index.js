@@ -7,7 +7,7 @@ Page({
     arrow: '../../images/h_arrow_1.png',
     tblHeadFixed: false,
     navAllShow: false,
-    isLoading: true,
+    isLoadingShow: true,
     nav: "",
     dataRank: "",
     currentIndex: 0
@@ -34,6 +34,10 @@ Page({
     })
   },
 
+  scroll: function (e) {
+    console.log(e)
+  },
+
  ajaxGetRankList: function (id) {
     var that=this;
     wx.request({
@@ -44,8 +48,14 @@ Page({
       },
       success: function (res) {
         that.setData({
-          dataRank: res.data
+          dataRank:res.data,
+          isLoadingShow:false
         });
+
+        
+
+        
+
 
       },
       fail: function (res) {
@@ -67,7 +77,8 @@ Page({
       }
     });
     this.setData({
-      navAllShow: false
+      navAllShow: false,
+      isLoadingShow:true
     })
     //请求获取数据
     this.ajaxGetRankList(id);
