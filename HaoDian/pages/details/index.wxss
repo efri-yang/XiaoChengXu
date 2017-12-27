@@ -26,14 +26,16 @@ page{
 .gs-details-header .soma-rank .detail .rank {
   float: left;
   background: #f8dfb7;
-  font-size: 26rpx;
+  font-size: 24rpx;
   padding: 0 30rpx 0 12rpx;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
 .gs-details-header .soma-rank .detail .name {
   color: #61451a;
-  font-size: 26rpx;
+  font-size: 24rpx;
   padding: 0 30rpx;
+   float: left;
 }
 
 .gs-details-header .soma-shopname{
@@ -117,14 +119,14 @@ page{
   right: 0;
   bottom: 0;
   background-color: rgba(0, 0, 0, 0.8);
-  visibility: hidden;
+  display: none;
+  /* visibility: hidden;
     opacity: 0;
     transition: all 0.35s ease-out;
-    -webkit-transition: all 0.35s ease-out; 
+    -webkit-transition: all 0.35s ease-out;  */
 }
 .shop-intro-dialog-mask.show{
-  visibility: visible;
-  opacity:1; 
+  display: block;
 }
 .shop-intro-dialog-wrap{
     position:fixed;
@@ -133,14 +135,14 @@ page{
     width: 80%;
     transform:translate(-50%,-50%); 
     z-index: 101;
-    visibility: hidden;
+    display: none;
+    /* visibility: hidden;
     opacity: 0;
     transition: all 0.35s ease-out; 
-    -webkit-transition: all 0.35s ease-out; 
+    -webkit-transition: all 0.35s ease-out;  */
 }
 .shop-intro-dialog-wrap.show{
-  visibility: visible;
-  opacity:1; 
+  display: block;
  
 }
 .shop-intro-dialog{

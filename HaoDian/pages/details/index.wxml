@@ -3,7 +3,7 @@
     <view class="soma-rank">
       <view class="detail">
         <view class="rank">No.{{dataDetail.data.info.rank}}</view>
-        <text class="name">{{dataDetail.data.info.cate}}</text>
+        <text class="name">{{dataDetail.data.city}}{{dataDetail.data.info.cate}}Top50</text>
       </view>
     </view>
     <view class="soma-shopname">{{dataDetail.data.info.name}}</view>

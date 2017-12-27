@@ -70,6 +70,11 @@ Page({
     this.ajaxGetRankList(id);
 
   },
+  navMask:function(){
+    this.setData({
+      isNavAllShow: false
+    });
+  },
 
   onPageScroll: function (res) {
     if (res.scrollTop > 80) {

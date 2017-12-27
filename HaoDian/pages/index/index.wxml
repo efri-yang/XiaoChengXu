@@ -1,8 +1,8 @@
 <!--index.wxml-->
 
 
-<view class="container" style='position:relative'>
-  <scroll-view class="gs-main-nav clear" scroll-x="true" bindscroll="scroll" style="width: 100%">
+<view class="container" style='position:relative;z-index:110;'>
+  <scroll-view class="gs-main-nav clear" scroll-x="true" bindscroll="scroll" style="width: 100%;background:#fff;">
         <view wx:for="{{dataNav.data.list}}" wx:for-index="index" wx:for-item="item" id="{{item}}"   bindtap='navTap' class="item {{index==currentIndex ? 'current' : ''}}" >
             <text class="txt">{{item}}</text>
         </view>
@@ -17,6 +17,8 @@
   </view>
   <view class="h-more-btn {{!!isNavAllShow ? 'current' :''}}" bindtap="navMore"><view class="arrow"></view></view>
 </view>
+
+<view class="h-nav-all-mask" wx:if="{{isNavAllShow}}" bindtouchstart='navMask'></view>
 
 
 
