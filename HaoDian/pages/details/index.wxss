@@ -91,8 +91,6 @@ page{
 }
 
 .details-tip-2{
-    
-    
     overflow: hidden;
     position:absolute;
     left:50%;
@@ -103,11 +101,14 @@ page{
     line-height: 28rpx;
     padding: 20rpx 0;      
 }
-.details-tip-2 image{
+.details-tip-2 .img{
   float:left; 
   width:28rpx;
   height:28rpx;
-  margin-right:16rpx; 
+  margin-right:16rpx;
+ 
+  background:url("http://hdi.xiaoyu.com/images/wechatapp/details/icon_hdwhat.png") no-repeat center center;
+  background-size: 100% 100%;  
 }
 .shop-intro-dialog-mask{
   position:fixed;
@@ -118,8 +119,8 @@ page{
   background-color: rgba(0, 0, 0, 0.8);
   visibility: hidden;
     opacity: 0;
-    transition: all 0.5s ease-out;
-    -webkit-transition: all 0.5s ease-out; 
+    transition: all 0.35s ease-out;
+    -webkit-transition: all 0.35s ease-out; 
 }
 .shop-intro-dialog-mask.show{
   visibility: visible;
@@ -134,8 +135,8 @@ page{
     z-index: 101;
     visibility: hidden;
     opacity: 0;
-    transition: all 0.5s ease-out; 
-    -webkit-transition: all 0.5s ease-out; 
+    transition: all 0.35s ease-out; 
+    -webkit-transition: all 0.35s ease-out; 
 }
 .shop-intro-dialog-wrap.show{
   visibility: visible;
@@ -182,9 +183,12 @@ page{
     text-align: center;
     margin-top:40rpx;    
 }
-.shop-intro-dialog-wrap .soma-close image{
+.shop-intro-dialog-wrap .soma-close .img{
       width: 27rpx;
-      height:27rpx; 
+      height:27rpx;
+      display: inline-block;
+      background:url("http://hdi.xiaoyu.com/images/wechatapp/details/icon_dialog_close.png") no-repeat center center;
+      background-size: 100% 100%;
 }
 
 

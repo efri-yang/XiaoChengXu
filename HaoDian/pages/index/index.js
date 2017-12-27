@@ -4,11 +4,10 @@ const app = getApp();
 
 Page({
   data: {
-    arrow: '../../images/h_arrow_1.png',
-    tblHeadFixed: false,
-    navAllShow: false,
+    isTblHeadFixed: false,
+    isNavAllShow: false,
     isLoadingShow: true,
-    nav: "",
+    dataNav: "",
     dataRank: "",
     currentIndex: 0
   },
@@ -23,20 +22,13 @@ Page({
       },
       success: function (res) {
         that.setData({
-          nav: res.data
+          dataNav: res.data
         });
-        console.log(that.data.nav);
-        that.ajaxGetRankList(that.data.nav.data.list[0]);
-      },
-      fail: function (res) {
-        console.log(res);
+        that.ajaxGetRankList(that.data.dataNav.data.list[0]);
       }
     })
   },
 
-  scroll: function (e) {
-    console.log(e)
-  },
 
  ajaxGetRankList: function (id) {
     var that=this;
@@ -53,7 +45,7 @@ Page({
         });
       },
       fail: function (res) {
-        console.log(res);
+       
       }
     })
   },
@@ -62,7 +54,7 @@ Page({
     var that = this;
     var id = e.currentTarget.id;
     //设置currentIndex
-    this.data.nav.data.list.forEach(function (v, k) {
+    this.data.dataNav.data.list.forEach(function (v, k) {
       if (id == v) {
         that.setData({
           currentIndex: k
@@ -71,7 +63,7 @@ Page({
       }
     });
     this.setData({
-      navAllShow: false,
+      isNavAllShow: false,
       isLoadingShow:true
     })
     //请求获取数据
@@ -82,17 +74,17 @@ Page({
   onPageScroll: function (res) {
     if (res.scrollTop > 80) {
       this.setData({
-        tblHeadFixed: true
+        isTblHeadFixed: true
       })
     } else {
       this.setData({
-        tblHeadFixed: false
+        isTblHeadFixed: false
       })
     }
   },
   navMore: function () {
     this.setData({
-      navAllShow: !this.data.navAllShow
+      isNavAllShow: !this.data.isNavAllShow
     })
   }
 
