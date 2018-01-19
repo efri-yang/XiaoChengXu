@@ -3,6 +3,23 @@ const app = getApp();
 
 
 Page({
+  onShareAppMessage: function (res) {
+    return {
+      title: '你喜欢的才是好店',
+      path: '/pages/index/index',
+      imageUrl: "http://hdi.xiaoyu.com/images/wechatapp/common/common_haodian_share.jpg",
+      success: function (res) {
+        wx.showToast({
+          title: '转发成功！',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
   data: {
     isTblHeadFixed: false,
     isNavAllShow: false,

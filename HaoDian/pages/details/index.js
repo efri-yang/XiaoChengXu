@@ -2,6 +2,23 @@ Page({
   data: {
     isIntroDialogShow: false
   },
+  onShareAppMessage: function (res) {
+    return {
+      title: '你喜欢的才是好店',
+      path: '/pages/details/index?id='+this.data.id,
+      imageUrl:"http://hdi.xiaoyu.com/images/wechatapp/common/common_haodian_share.jpg",
+      success: function (res) {
+        wx.showToast({
+          title: '转发成功！',
+          icon: 'success',
+          duration: 2000
+        })
+      },
+      fail: function (res) {
+        // 转发失败
+      }
+    }
+  },
   onLoad: function (options) {
     var that = this;
     this.setData({
